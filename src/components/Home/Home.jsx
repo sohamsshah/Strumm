@@ -1,10 +1,11 @@
 import React from 'react'
+import {Link} from "react-router-dom"
 
 function Home() {
     return (
         <div>
             I am Home
-            <button><a href="/categories">Go to Categories</a> </button>
+            <button><Link to="/categories">Go to Categories</Link> </button>
         </div>
     )
 }

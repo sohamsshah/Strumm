@@ -32,7 +32,7 @@ function Categories() {
               ) : (
                 <div> 3 days minimum </div>
               )}
-              <button onClick={() => dispatch({type:"INCREMENT", payload:item})}>ADD TO CART</button>
+              {item.inCart?(<button><Link to="/cart">Go to Cart</Link></button>):(<button onClick={() => dispatch({type:"ADD_TO_CART", payload:item})}>ADD TO CART</button>)}
               <button onClick={() => dispatch({type:"ADD_TO_WISHLIST", payload:item})}>Add to WishList</button>
             </div>
           )

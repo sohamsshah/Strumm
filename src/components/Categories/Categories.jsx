@@ -1,9 +1,13 @@
 import React from 'react'
 import {useCart} from "./../../context/cart-context"
+import {totalItems} from "./../../utils/totalQuantity"
+import {Link} from "react-router-dom";
 function Categories() {
     const {products, dispatch} = useCart();
+    console.log(totalItems(products));
     return (
         <div>
+            <Link to="/cart">Cart</Link>
             <div className="App" style={{ display: "flex", flexWrap: "wrap" }}>
         {products.map(
           (item) => (

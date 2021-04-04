@@ -32,28 +32,28 @@ function Navbar({...rest}) {
         <nav className={styles.secondaryNavbar}>
             <ul className={styles.secondaryNavList}>
                 <li>
-                <NavLink to="/" exact={true} className={styles.navLink} activeClassName={styles.active}>Home</NavLink>
+                <NavLink to="/" exact className={styles.navLink} activeClassName={styles.active}>Home</NavLink>
                 </li>
                 <li>
-                <NavLink to="/categories" active="selected" className={styles.navLink} activeClassName={styles.active}>Categories</NavLink>  
+                <NavLink to="/categories" exact active="selected" className={styles.navLink} activeClassName={styles.active}>Categories</NavLink>  
                 </li>
                 <li>
-                <NavLink to="/categories/guitars" className={styles.navLink} activeClassName={styles.active}>Guitars</NavLink>  
+                <NavLink to="/categories/guitars" exact className={styles.navLink} activeClassName={styles.active}>Guitars</NavLink>  
                 </li>
                 <li>
-                <NavLink to="/categories/drums" className={styles.navLink} activeClassName={styles.active}>Drums</NavLink>  
+                <NavLink to="/categories/drums" exact className={styles.navLink} activeClassName={styles.active}>Drums</NavLink>  
                 </li>
                 <li>
-                <NavLink to="/categories/pianos" className={styles.navLink} activeClassName={styles.active}>Pianos</NavLink>  
+                <NavLink to="/categories/pianos" exact className={styles.navLink} activeClassName={styles.active}>Pianos</NavLink>  
                 </li>
                 <li>
-                <NavLink to="/categories/studio" className={styles.navLink} activeClassName={styles.active}>Studio</NavLink>  
+                <NavLink to="/categories/studio" exact className={styles.navLink} activeClassName={styles.active}>Studio</NavLink>  
                 </li>
                 <li>
-                <NavLink to="/categories/used" className={styles.navLink} activeClassName={styles.active}>Used</NavLink>  
+                <NavLink to="/categories/used" exact className={styles.navLink} activeClassName={styles.active}>Used</NavLink>  
                 </li>
                 <li>
-                <NavLink to="/contact-us" className={styles.navLink} activeClassName={styles.active}>Contact Us</NavLink>  
+                <NavLink to="/contact-us" exact className={styles.navLink} activeClassName={styles.active}>Contact Us</NavLink>  
                 </li>
             </ul>
         </nav>

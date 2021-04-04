@@ -16,8 +16,8 @@ function App() {
           <Route path="/cart" exact component={Cart}/>
           <Route path="/wishlist" exact component={WishList}/>
           <Route path="/categories" exact component={AllCategories}/>
-          <Route path="/categories/guitar" exact component={Guitar}/>
-          <Route path="/categories/piano" exact component={Piano}/>
+          <Route path="/categories/guitars" exact component={Guitar}/>
+          <Route path="/categories/pianos" exact component={Piano}/>
         </Switch>
         </BrowserRouter>
     </div>

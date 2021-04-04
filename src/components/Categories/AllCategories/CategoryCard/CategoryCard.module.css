@@ -5,6 +5,10 @@
     border: solid 1px #eee;
 }
 
+.card div{
+    text-align: center;
+}
+
 .link{
     color:inherit;
     text-decoration: none;

@@ -1,20 +1,19 @@
 import React from 'react'
-import {useCart} from "./../../../context/cart-context"
-import {Link} from "react-router-dom";
+import CategoryCard from "./CategoryCard/CategoryCard"
+import Footer from "./../../Global/Footer/Footer"
 import Navbar from "./../../Global/Navbar/Navbar"
 import styles from "./AllCategories.module.css"
+import {categories} from "./../../../data/data"
 
 function AllCategories() {
-    const {products, dispatch} = useCart();
     return (
         <div>
-            
-            <Navbar style={{backgroundColor:"var(--dark-color"}}/>
-            <div className="App" style={{ display: "flex", flexWrap: "wrap" }}>
-        {products.map(
-          (item) => (<div>{item.id}</div>)
-        )}
-      </div>
+          <Navbar />
+          <div className={styles.title}>Categories</div>
+          <div className={styles.categoryGroup}>
+            {categories.map(({title, href, src}) => <CategoryCard href={href} src={src} title={title}/>)}
+          </div>
+          <Footer />
         </div>
     )
 }

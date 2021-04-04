@@ -6,8 +6,8 @@ function CategoryCard({title,src, href,...rest}) {
     return (
         <div className={styles.card} {...rest}>
             <a href={href}><img src={src} alt="card" /></a>
-            <div>
-        <a className={styles.link} href={href}>{title}</a>
+        <div>
+            <a className={styles.link} href={href}>{title}</a>
         </div>
         </div>
     )

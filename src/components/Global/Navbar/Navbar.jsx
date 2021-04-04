@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from "./Navbar.module.css"
-import {Link} from "react-router-dom"
+import {NavLink, Link} from "react-router-dom"
 import Logo from "./../../../images/strumm_logo.png"
 import {BsSearch} from "react-icons/bs"
 
@@ -32,28 +32,28 @@ function Navbar({...rest}) {
         <nav className={styles.secondaryNavbar}>
             <ul className={styles.secondaryNavList}>
                 <li>
-                <Link to="/" className={styles.navLink}>Home</Link>  
+                <NavLink to="/" exact={true} className={styles.navLink} activeClassName={styles.active}>Home</NavLink>
                 </li>
                 <li>
-                <Link to="/" className={styles.navLink}>Categories</Link>  
+                <NavLink to="/categories" active="selected" className={styles.navLink} activeClassName={styles.active}>Categories</NavLink>  
                 </li>
                 <li>
-                <Link to="/" className={styles.navLink}>Guitars</Link>  
+                <NavLink to="/categories/guitars" className={styles.navLink} activeClassName={styles.active}>Guitars</NavLink>  
                 </li>
                 <li>
-                <Link to="/" className={styles.navLink}>Drums</Link>  
+                <NavLink to="/categories/drums" className={styles.navLink} activeClassName={styles.active}>Drums</NavLink>  
                 </li>
                 <li>
-                <Link to="/" className={styles.navLink}>Pianos</Link>  
+                <NavLink to="/categories/pianos" className={styles.navLink} activeClassName={styles.active}>Pianos</NavLink>  
                 </li>
                 <li>
-                <Link to="/" className={styles.navLink}>Studio</Link>  
+                <NavLink to="/categories/studio" className={styles.navLink} activeClassName={styles.active}>Studio</NavLink>  
                 </li>
                 <li>
-                <Link to="/" className={styles.navLink}>Used</Link>  
+                <NavLink to="/categories/used" className={styles.navLink} activeClassName={styles.active}>Used</NavLink>  
                 </li>
                 <li>
-                <Link to="/" className={styles.navLink}>Contact Us</Link>  
+                <NavLink to="/contact-us" className={styles.navLink} activeClassName={styles.active}>Contact Us</NavLink>  
                 </li>
             </ul>
         </nav>

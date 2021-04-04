@@ -1,0 +1,116 @@
+@import url("./../../Global/Themes/Themes.css");
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-color);
+    font-weight: bolder;
+    padding:1rem 5rem;
+    font-size: 1.2rem;
+    color: var(--dark-color);
+    flex-wrap:wrap;
+}
+
+.navbrand{
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navbrand img{
+    width:auto;
+    height:4rem;
+    margin-right:1rem;
+}
+
+
+.navLink{
+    color:inherit;
+    text-decoration:none;
+    transition:0.5s;
+}
+
+.navbrand:hover{
+    cursor:pointer;
+    color:var(--primary-color)
+}
+
+.secondaryNavbar{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    position: sticky;
+    top: 0;
+}
+
+.searchBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.searchBarInput{
+    width:450px;
+    height:2rem;
+    font-size: 1.2rem;
+}
+
+.searchIcon{
+    background-color: var(--primary-color);
+    padding:0.3rem 0.5rem;
+}
+
+
+.CTA{
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    align-items: center;
+    
+    
+}
+
+.sticky{
+    position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.noDisplay{
+    display:none;
+}
+
+.CTA li{
+    margin:0 1rem;
+}
+
+.CTA li:hover{
+    color: var(--primary-color);
+    cursor:pointer;
+}
+
+
+.secondaryNavList{
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    align-items: center;
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+    padding:1rem 0;
+    font-size: 1.1rem;
+    
+}
+
+.secondaryNavList li{
+    margin:0 2rem;
+}
+
+.secondaryNavList li:hover{
+    color: var(--dark-color);
+    cursor:pointer;
+}

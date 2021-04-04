@@ -1,5 +1,12 @@
 import faker from "faker";
 import {randomPicker} from "./../utils/randomPicker"
+import Guitars from "./../images/guitars.jpg"
+import Drums from "./../images/drums.png"
+import Studio from "./../images/studio.jpg"
+import Traditional from "./../images/traditional.png"
+import Keys from "./../images/keys.jpg"
+import Merchandise from "./../images/merchandise.jpg"
+
 
 faker.seed(123);
 
@@ -26,4 +33,14 @@ export const data = [...Array(50)].map((item) => ({
   ]),
   color: faker.commerce.color()
 }));
+
+export const categories = [
+  {title:"Guitar", src:Guitars, href:"/categories/guitars"},
+  {title:"Keys", src:Keys, href:"/categories/keys"},
+  {title:"Drums", src:Drums, href:"/categories/drums"},
+  {title:"Studio", src:Studio, href:"/categories/studio"},
+  {title:"Traditional", src:Traditional, href:"/categories/traditional"},
+  {title:"Merchandise", src:Merchandise, href:"/categories/merchandise"}
+
+] 
 

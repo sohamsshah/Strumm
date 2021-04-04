@@ -1,11 +1,17 @@
 import React from 'react'
+import {useCart} from "./../../context/cart-context"
 
-function WishList() {
+export default function WishList() {
+    const {products, dispatch} = useCart();
+    const wishListedItems = products.filter((item) => item.wishListed)
+    console.log(wishListedItems, products);
     return (
         <div>
-            I am WishList
+            Hello I am WishList
+            {wishListedItems.map((item) => <div>
+                {item.name}
+                <button onClick={() => dispatch({type:"REMOVE_FROM_CART", payload:item})}>REMOVE</button>
+                </div>)}
         </div>
     )
 }
-
-export default WishList

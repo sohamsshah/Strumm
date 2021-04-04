@@ -44,13 +44,13 @@ function Navbar({...rest}) {
                 <NavLink to="/categories/drums" exact className={styles.navLink} activeClassName={styles.active}>Drums</NavLink>  
                 </li>
                 <li>
-                <NavLink to="/categories/pianos" exact className={styles.navLink} activeClassName={styles.active}>Pianos</NavLink>  
+                <NavLink to="/categories/keys" exact className={styles.navLink} activeClassName={styles.active}>Keys</NavLink>  
                 </li>
                 <li>
                 <NavLink to="/categories/studio" exact className={styles.navLink} activeClassName={styles.active}>Studio</NavLink>  
                 </li>
                 <li>
-                <NavLink to="/categories/used" exact className={styles.navLink} activeClassName={styles.active}>Used</NavLink>  
+                <NavLink to="/categories/traditional" exact className={styles.navLink} activeClassName={styles.active}>Traditional</NavLink>  
                 </li>
                 <li>
                 <NavLink to="/contact-us" exact className={styles.navLink} activeClassName={styles.active}>Contact Us</NavLink>  

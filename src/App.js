@@ -2,8 +2,7 @@ import './App.css';
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import Home from "./components/Home/Home"
 import Cart from "./components/Cart/Cart"
-import Guitar from "./components/Categories/Products/Guitar/Guitar"
-import Piano from "./components/Categories/Products/Piano/Piano"
+import ProductPage from "./components/Categories/Products/ProductPage/ProductPage"
 import WishList from "./components/WishList/WishList"
 import AllCategories from "./components/Categories/AllCategories/AllCategories"
 
@@ -16,8 +15,8 @@ function App() {
           <Route path="/cart" exact component={Cart}/>
           <Route path="/wishlist" exact component={WishList}/>
           <Route path="/categories" exact component={AllCategories}/>
-          <Route path="/categories/guitars" exact component={Guitar}/>
-          <Route path="/categories/pianos" exact component={Piano}/>
+          <Route path="/categories/guitars" exact component={() => <ProductPage instrument="Guitar" />}/>
+          <Route path="/categories/keys" exact component={() => <ProductPage instrument="Keys" />}/>
         </Switch>
         </BrowserRouter>
     </div>

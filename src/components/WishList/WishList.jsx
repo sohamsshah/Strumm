@@ -3,8 +3,8 @@ import {useCart} from "./../../context/cart-context"
 
 export default function WishList() {
     const {products, dispatch} = useCart();
-    const wishListedItems = products.filter((item) => item.wishListed)
-    console.log(wishListedItems, products);
+    let wishListedItems = products.filter((item) => item.wishListed)
+
     return (
         <div>
             Hello I am WishList

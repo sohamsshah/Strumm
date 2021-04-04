@@ -53,6 +53,9 @@ function Navbar({...rest}) {
                 <NavLink to="/categories/traditional" exact className={styles.navLink} activeClassName={styles.active}>Traditional</NavLink>  
                 </li>
                 <li>
+                <NavLink to="/categories/merchandise" exact className={styles.navLink} activeClassName={styles.active}>Merchandise</NavLink>  
+                </li>
+                <li>
                 <NavLink to="/contact-us" exact className={styles.navLink} activeClassName={styles.active}>Contact Us</NavLink>  
                 </li>
             </ul>

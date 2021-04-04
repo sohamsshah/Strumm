@@ -17,6 +17,10 @@ function App() {
           <Route path="/categories" exact component={AllCategories}/>
           <Route path="/categories/guitars" exact component={() => <ProductPage instrument="Guitar" />}/>
           <Route path="/categories/keys" exact component={() => <ProductPage instrument="Keys" />}/>
+          <Route path="/categories/drums" exact component={() => <ProductPage instrument="Drums" />}/>
+          <Route path="/categories/studio" exact component={() => <ProductPage instrument="Studio" />}/>
+          <Route path="/categories/traditional" exact component={() => <ProductPage instrument="Traditional" />}/>
+          <Route path="/categories/merchandise" exact component={() => <ProductPage instrument="Merchandise" />}/>
         </Switch>
         </BrowserRouter>
     </div>

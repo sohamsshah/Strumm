@@ -1,0 +1,15 @@
+.pageLayout{
+    display:flex;
+    flex-wrap: wrap;
+    padding:2rem;
+}
+
+.productFilters{
+    width:20%;
+}
+
+.allProducts{
+    width:80%;
+    display:flex;
+    flex-wrap: wrap;
+}

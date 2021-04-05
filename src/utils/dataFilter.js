@@ -6,8 +6,18 @@ export const filterByInstrumentName = (data, instrument) => {
     return data.filter((item) => item.category.instrument === instrument);
 }
 
-export const filterByInstrumentType = (data, instrument, type) => {
-    return data.filter((item => item.category.instrument === instrument)).filter((item) => item.category.type === type)
+export const filterByInstrumentType = (data, types) => {
+    var selectedTypes = []
+    for(let type in types){
+        if(types[type]){
+            selectedTypes.push(type);
+        }
+    }
+    console.log(selectedTypes);
+    if(selectedTypes.length === 0){
+        return data;
+    }
+    return data.filter((item) => selectedTypes.includes(item.category.type))
 }
 
 export const sortByFunction = (data, sortBy) => {

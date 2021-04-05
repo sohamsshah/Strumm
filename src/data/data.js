@@ -7,9 +7,17 @@ import Traditional from "./../images/traditional.png"
 import Keys from "./../images/keys.jpg"
 import Merchandise from "./../images/merchandise.jpg"
 
+export const instrumentType = {
+  "Guitar": ["Acoustic", "Electric", "Classical"],
+  "Keys": ["Keyboard", "Digital Piano", "Workstation"],
+  "Drums":["Crash Cymbals", "Hi-Hats", "Ride Cymbals", "Splashes & Effects", "Cymbal Packs"],
+  "Studio":["Bundles", "Condenser", "Controllers", "DJ Mixer", "Drum Mics", "Dynamic", "Mobile", "Production", "Synthesizer"],
+  "Traditional":["Violin", "Flutes", "Saxophone", "Harmonium", "Mandolin"],
+  "Merchandise":["T-shirt", "Painting", "Stickers"]
+}
+
 
 faker.seed(123);
-
 export const data = [...Array(500)].map((item) => ({
   id: faker.random.uuid(),
   name: faker.commerce.productName(),
@@ -21,12 +29,12 @@ export const data = [...Array(500)].map((item) => ({
   fastDelivery: faker.random.boolean(),
   ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
   category: faker.random.arrayElement([
-    {"instrument":"Guitar", "type": randomPicker(["Acoustic", "Electric", "Classical"])},
-    {"instrument":"Keys", "type": randomPicker(["Keyboard", "Digital Piano", "Workstation"])},
-    {"instrument":"Drums", "type": randomPicker(["Crash Cymbals", "Hi-Hats", "Ride Cymbals", "Splashes & Effects", "Cymbal Packs"])},
-    {"instrument":"Studio", "type": randomPicker(["Bundles", "Condenser", "Controllers", "DJ Mixer", "Drum Mics", "Dynamic", "Mobile", "Production", "Synthesizer"])},
-    {"instrument":"Traditional", "type": randomPicker(["Violin", "Flutes", "Saxophone", "Harmonium", "Mandolin"])},
-    {"instrument":"Merchandise", "type": randomPicker(["T-shirt", "Painting", "Stickers"])}
+    {"instrument":"Guitar", "type": randomPicker(instrumentType.Guitar)},
+    {"instrument":"Keys", "type": randomPicker(instrumentType.Keys)},
+    {"instrument":"Drums", "type": randomPicker(instrumentType.Drums)},
+    {"instrument":"Studio", "type": randomPicker(instrumentType.Studio)},
+    {"instrument":"Traditional", "type": randomPicker(instrumentType.Traditional)},
+    {"instrument":"Merchandise", "type": randomPicker(instrumentType.Merchandise)}
 
 
   ]),
@@ -49,4 +57,5 @@ export const categories = [
   {title:"Merchandise", src:Merchandise, href:"/categories/merchandise"}
 
 ] 
+
 

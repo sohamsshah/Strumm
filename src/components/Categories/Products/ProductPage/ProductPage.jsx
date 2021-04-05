@@ -2,11 +2,11 @@ import React from 'react'
 import Navbar from "../../../Global/Navbar/Navbar"
 import Footer from "../../../Global/Footer/Footer"
 import {useCart} from "../../../../context/cart-context"
-import {filterByInstrumentName} from "../../../../utils/dataFilter"
+import {filterByInstrumentName, sortByFunction, filterByInstrumentType} from "../../../../utils/dataFilter"
 import ProductsCard from "../ProductsCard/ProductsCard"
 import styles from "./ProductPage.module.css"
 import {useReducer} from "react"
-import {sortByFunction} from "./../../../../utils/dataFilter"
+import {instrumentType} from "./../../../../data/data"; 
 
 const filterReducer = (state, action) => {
   switch(action.type){
@@ -25,6 +25,10 @@ const filterReducer = (state, action) => {
         ...state,
         sortBy: action.payload
       };
+    case "TOGGLE_INSTRUMENT":
+      return {
+        ...state, instrumentFilterState:{...state.instrumentFilterState, [action.payload]:!state.instrumentFilterState[action.payload]}
+      }
     default:
       return state;
   }
@@ -33,13 +37,19 @@ const filterReducer = (state, action) => {
 export default function ProductPage({instrument, ...rest}) {
     const {products, dispatch} = useCart();
     const product = filterByInstrumentName(products, instrument);
-    const [{showAllProducts, showFastDeliveryOnly, sortBy}, filterDispatch] = useReducer(filterReducer, {
+
+    const [{showAllProducts, showFastDeliveryOnly, sortBy, instrumentFilterState}, filterDispatch] = useReducer(filterReducer, {
       showInventoryAll: true,
       showFastDeliveryOnly: false,
-      sortBy: null
+      sortBy: null,
+      instrumentFilterState: instrumentType[instrument].reduce(function(result, item) {
+        result[item] = false;
+        return result;
+      }, {})
     });
+    
     const sortedProduct = sortByFunction(product, sortBy);
-    console.log(sortedProduct, sortBy);
+    const filteredData = filterByInstrumentType(sortedProduct, instrumentFilterState)
     return (
         <div>
             <Navbar />
@@ -70,11 +80,23 @@ export default function ProductPage({instrument, ...rest}) {
           ></input>{" "}
           Price - Low to High
         </label>
-      </fieldset>           
+      </fieldset> 
+      <fieldset style={{ marginTop: "1rem" }}>
+        <legend> Filters </legend>
+        {instrumentType[instrument].map((item) => {
+        return (<label>
+          <input
+            type="checkbox"
+            checked={instrumentFilterState[item]}
+            onChange={() => filterDispatch({ type: "TOGGLE_INSTRUMENT", payload:item })}
+          />
+          {item}
+        </label>)})}
+        </fieldset>          
             </div>
             </div>
             <div className={styles.allProducts}>
-            {sortedProduct.map(
+            {filteredData.map(
               (item) => (
                 <ProductsCard products={product} dispatch={dispatch} item={item}/>
               )

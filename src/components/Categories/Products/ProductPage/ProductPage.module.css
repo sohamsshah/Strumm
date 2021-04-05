@@ -1,15 +1,23 @@
 .pageLayout{
     display:flex;
-    flex-wrap: wrap;
     padding:2rem;
 }
 
 .productFilters{
+    margin-top:1rem;
     width:20%;
+    border:solid 1px rgb(192,191,191);
+    height:100vh;
 }
 
 .allProducts{
     width:80%;
     display:flex;
     flex-wrap: wrap;
+}
+
+.filterTitle{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
 }

@@ -1,9 +1,24 @@
 import faker from "faker";
 import {randomPicker} from "./../utils/randomPicker"
+import Guitars from "./../images/guitars.jpg"
+import Drums from "./../images/drums.png"
+import Studio from "./../images/studio.jpg"
+import Traditional from "./../images/traditional.png"
+import Keys from "./../images/keys.jpg"
+import Merchandise from "./../images/merchandise.jpg"
+
+export const instrumentType = {
+  "Guitar": ["Acoustic", "Electric", "Classical"],
+  "Keys": ["Keyboard", "Digital Piano", "Workstation"],
+  "Drums":["Crash Cymbals", "Hi-Hats", "Ride Cymbals", "Splashes & Effects", "Cymbal Packs"],
+  "Studio":["Bundles", "Condenser", "Controllers", "DJ Mixer", "Drum Mics", "Dynamic", "Mobile", "Production", "Synthesizer"],
+  "Traditional":["Violin", "Flutes", "Saxophone", "Harmonium", "Mandolin"],
+  "Merchandise":["T-shirt", "Painting", "Stickers"]
+}
+
 
 faker.seed(123);
-
-export const data = [...Array(50)].map((item) => ({
+export const data = [...Array(500)].map((item) => ({
   id: faker.random.uuid(),
   name: faker.commerce.productName(),
   image: faker.random.image(),
@@ -14,8 +29,14 @@ export const data = [...Array(50)].map((item) => ({
   fastDelivery: faker.random.boolean(),
   ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
   category: faker.random.arrayElement([
-    {"instrument":"Guitar", "type": randomPicker(["Acoustic", "Electric", "Classical"])},
-    {"instrument":"Piano", "type": randomPicker(["Keyboard", "Digital Piano", "Workstation"])}
+    {"instrument":"Guitar", "type": randomPicker(instrumentType.Guitar)},
+    {"instrument":"Keys", "type": randomPicker(instrumentType.Keys)},
+    {"instrument":"Drums", "type": randomPicker(instrumentType.Drums)},
+    {"instrument":"Studio", "type": randomPicker(instrumentType.Studio)},
+    {"instrument":"Traditional", "type": randomPicker(instrumentType.Traditional)},
+    {"instrument":"Merchandise", "type": randomPicker(instrumentType.Merchandise)}
+
+
   ]),
   level: faker.random.arrayElement([
     "beginner",
@@ -26,4 +47,15 @@ export const data = [...Array(50)].map((item) => ({
   ]),
   color: faker.commerce.color()
 }));
+
+export const categories = [
+  {title:"Guitars", src:Guitars, href:"/categories/guitars"},
+  {title:"Keys", src:Keys, href:"/categories/keys"},
+  {title:"Drums", src:Drums, href:"/categories/drums"},
+  {title:"Studio", src:Studio, href:"/categories/studio"},
+  {title:"Traditional", src:Traditional, href:"/categories/traditional"},
+  {title:"Merchandise", src:Merchandise, href:"/categories/merchandise"}
+
+] 
+
 
